@@ -19,7 +19,14 @@ class ViewController: UIViewController {
 
     @IBAction func plusIconPressed(_ sender: UIButton) {
         
-        navBarView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200.0)
+        UIView.animate(withDuration: 1.0, animations: {
+            if (self.navBarView.frame.size.height < 45.0) {
+                self.navBarView.frame.size.height += 100 }
+            else {
+                self.navBarView.frame.size.height =  44.0
+            }
+            
+        })
         
         print("plus icon pressed")
 
